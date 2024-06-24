@@ -77,12 +77,12 @@ public class Contact {
 
     @Override
     public String toString() {
-        String result = getFullname();
+        String result = "Name : " + getFullname();
         if (this.phone != null){
-            result+= "\n phone:" + this.phone;
+            result+= "\nPhone: " + this.phone;
         }
         if (this.email != null){
-            result+= "\n email:" + this.email;
+            result+= "\nEmail: " + this.email;
         }
         return result;
     }

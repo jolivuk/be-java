@@ -20,7 +20,7 @@ public class App {
         try (Scanner in = new Scanner(System.in)) {
             boolean flag = true;
             while (flag) {
-                System.out.println(" 1 - prev  2 - next 0 - exit");
+                System.out.println(" 1 - prev  2 - next 3 - print all 0 - exit");
                 String key = in.next();
                 System.out.print("\033[H\033[J");
                 switch (key) {
@@ -30,9 +30,14 @@ public class App {
                     case "2":
                         presenter.next();
                         break;
+                    case "3":
+                        System.out.println("Print all list");
+                        presenter.displayAll();
+                        break;
                     case "0":
                         flag = false;
                         break;
+
 
                     default:
                         System.out.println("Такой команды нет");

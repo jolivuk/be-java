@@ -2,6 +2,8 @@ package org.demo.summary05_20240621.code.core.mvp;
 
 import org.demo.summary05_20240621.code.core.models.Contact;
 
+import java.util.List;
+
 public class Presenter {
 
     private Model model;
@@ -90,5 +92,9 @@ public class Presenter {
                 view.setLastName(contact.getLastName());
             }
         }
+    }
+
+    public void displayAll(){
+        view.dispayContacts(model.currentBook.getAllContacts());
     }
 }

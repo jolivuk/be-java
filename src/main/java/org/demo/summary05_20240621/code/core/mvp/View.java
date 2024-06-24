@@ -1,5 +1,9 @@
 package org.demo.summary05_20240621.code.core.mvp;
 
+import org.demo.summary05_20240621.code.core.models.Contact;
+
+import java.util.List;
+
 public interface View {
     String getFirstName();
 
@@ -15,6 +19,7 @@ public interface View {
     String getEmail();
 
     void setEmail(String value);
+    void dispayContacts(List<Contact> contacts);
 
 
 }

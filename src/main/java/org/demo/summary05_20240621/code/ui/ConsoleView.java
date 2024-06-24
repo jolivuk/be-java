@@ -1,7 +1,9 @@
 package org.demo.summary05_20240621.code.ui;
 
+import java.util.List;
 import java.util.Scanner;
 
+import org.demo.summary05_20240621.code.core.models.Contact;
 import org.demo.summary05_20240621.code.core.mvp.View;
 
 public class ConsoleView implements View {
@@ -55,5 +57,13 @@ public class ConsoleView implements View {
         System.out.printf("Email: %s\n", value);
     }
 
-
+    @Override
+    public void dispayContacts(List<Contact> contacts) {
+//        for (Contact c : contacts){
+//            System.out.println(c + "\n");
+//        }
+        for (int i = 0; i < contacts.size(); i++) {
+            System.out.println(i + ". " + contacts.get(i) + "\n");
+        }
+    }
 }
