@@ -34,7 +34,9 @@ public class Model {
             while (fname != null) {
                 String firstName = reader.readLine();
                 String lastName = reader.readLine();
-                this.currentBook.add(new Contact(firstName, lastName));
+                String phone = reader.readLine();
+                String email = reader.readLine();
+                this.currentBook.add(new Contact(firstName, lastName, phone, email));
                 fname = reader.readLine();
             }
             reader.close();

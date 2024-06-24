@@ -32,4 +32,28 @@ public class ConsoleView implements View {
     public void setLastName(String value) {
         System.out.printf("LastName: %s\n", value);
     }
+
+    @Override
+    public String getPhone() {
+        System.out.printf("Phone: ");
+        return in.nextLine();
+    }
+
+    @Override
+    public void setPhone(String value) {
+            System.out.printf("Phone: %s\n", value);
+    }
+
+    @Override
+    public String getEmail() {
+        System.out.printf("Email: ");
+        return in.nextLine();
+    }
+
+    @Override
+    public void setEmail(String value) {
+        System.out.printf("Email: %s\n", value);
+    }
+
+
 }

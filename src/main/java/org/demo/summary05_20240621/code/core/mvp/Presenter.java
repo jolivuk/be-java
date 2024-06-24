@@ -21,6 +21,8 @@ public class Presenter {
 
             view.setFirstName(contact.getFirstName());
             view.setLastName(contact.getLastName());
+            view.setPhone(contact.getPhone());
+            view.setEmail(contact.getEmail());
         }
     }
 
@@ -28,13 +30,18 @@ public class Presenter {
         model.currentBook().add(
                 new Contact(
                         view.getFirstName(),
-                        view.getLastName()));
+                        view.getLastName(),
+                        view.getPhone(),
+                        view.getEmail()));
     }
 
     public void remove() {
         Contact contact = new Contact(
                 view.getFirstName(),
-                view.getLastName());
+                view.getLastName(),
+                view.getPhone(),
+                view.getEmail()
+                );
         model.currentBook().remove(contact);
 
         if (model.currentBook().size() < 1) {
@@ -42,6 +49,8 @@ public class Presenter {
 
             view.setFirstName("");
             view.setLastName("");
+            view.setPhone("");
+            view.setEmail("");
         } else {
             model.setCurrentIndex(model.getCurrentIndex() - 1);
             if (model.getCurrentIndex() < 0)
@@ -50,6 +59,8 @@ public class Presenter {
             Contact temp = model.currentContact();
             view.setFirstName(temp.getFirstName());
             view.setLastName(temp.getLastName());
+            view.setPhone(temp.getPhone());
+            view.setEmail(temp.getEmail());
         }
     }
 
@@ -64,6 +75,8 @@ public class Presenter {
                 Contact contact = model.currentContact();
                 view.setFirstName(contact.getFirstName());
                 view.setLastName(contact.getLastName());
+                view.setPhone(contact.getPhone());
+                view.setEmail(contact.getEmail());
             }
         }
     }

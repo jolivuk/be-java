@@ -18,9 +18,9 @@ public class App {
         presenter.LoadFromFile();
 
         try (Scanner in = new Scanner(System.in)) {
-
-            while (true) {
-                System.out.println(" 1 - prev  2 - next");
+            boolean flag = true;
+            while (flag) {
+                System.out.println(" 1 - prev  2 - next 0 - exit");
                 String key = in.next();
                 System.out.print("\033[H\033[J");
                 switch (key) {
@@ -29,6 +29,9 @@ public class App {
                         break;
                     case "2":
                         presenter.next();
+                        break;
+                    case "0":
+                        flag = false;
                         break;
 
                     default:

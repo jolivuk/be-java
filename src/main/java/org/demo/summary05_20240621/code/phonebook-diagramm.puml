@@ -1,0 +1,80 @@
+@startuml
+class Contact{
+    firstName : String
+    lastName : String
+    phone : String
+    email : String
+
+    String getFirstName()
+    void setFirstName(String firstName)
+    String getLastName()
+    void setLastName(String lastName)
+    String getFullName()
+
+}
+
+class ContactBook{
+    List<Contact> contacts;
+
+    boolean add(Contact contact)
+    boolean remove(Contact contact)
+    boolean contains(Contact contact)
+    Contact getContactByIndex(int index)
+    int size()
+    Contact getContact(int index)
+    boolean remove(int index)
+}
+Contact --> ContactBook
+
+interface View{
+    String getFirstName();
+    void setFirstName(String value);
+    void setLastName(String value);
+    String getLastName();
+    void displayContacts(List<Contact> contacts)
+    void displayMessage(String msg);
+}
+
+class Model {
+    currentBook : ContactBook
+    currentIndex : int
+    path : String
+    Model(String path)
+    Contact currentContact()
+    void load()
+    void save()
+    ContactBook currentBook()
+    int getCurrentIndex()
+    void setCurrentIndex(int value)
+
+}
+
+class Presenter {
+    model Model;
+    View view;
+    Presenter(View view, String pathDb)
+    void LoadFromFile()
+    void add()
+    void remove()
+    void saveToFile()
+    void next()
+    void prev()
+}
+View --> Presenter
+Model --> Presenter
+
+class ConsoleView implements View{
+    in : Scanner
+    ConsoleView()
+
+}
+
+class Data{
+    static void seed(String path)
+}
+
+
+
+
+
+@enduml
